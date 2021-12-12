@@ -9,7 +9,7 @@ public class SortingTheSentence {
             for (int i = 0; i < s.length(); i++){
                 ch[i] = s.charAt(i);
             }
-            System.out.println(ch);
+          //  System.out.println(ch);
             
             List<Character> words = new ArrayList<>();
            
@@ -17,19 +17,22 @@ public class SortingTheSentence {
             
             
             for (int i = 0; i < ch.length; i++){
-                int temp  = i - 1;
-                int temp2 = i - 2;
+                int temp  = i - 1; // added 
                 if(ch[i] == ' ' || ch[i]==ch[ch.length-1]){
+                    // added 
                     if(ch[i] == ch[ch.length-1]){
                         temp = i;
-                        temp2 = i - 1;
                     }
-                    for(int j = index; j <= temp2;j++){
+                    for(int j = index; j <= i;j++){
+                        //added only the if branch
+                        if(ch[j] == ' '){
+                            continue;
+                        }
                          words.add(ch[j]);
                         
                     }
                     int num = Character.getNumericValue(ch[temp]);
-                    System.out.println("Num: " + num + " , char : "+ ch[temp]);
+                   // System.out.println("Num: " + num + " , char : "+ ch[temp]);
                 
                     sentence[num-1] = convertListOfStringToStr(words);//
                     System.out.println(words);
@@ -47,11 +50,15 @@ public class SortingTheSentence {
         {   if(str == null){break;}
             listString += str;
         }
-        return listString;
+        return listString.trim();
     }
     public String convertListOfStringToStr(List<Character> chars){
         StringBuilder sb = new StringBuilder();
-        for(char c : chars){
+        for(int i = 0; i < chars.size(); i++){
+            char c = chars.get(i);
+            if(Character.isDigit(c)){
+                c  = ' ';
+            }
             sb.append(c);
         }
         return sb.toString(); // todo 
