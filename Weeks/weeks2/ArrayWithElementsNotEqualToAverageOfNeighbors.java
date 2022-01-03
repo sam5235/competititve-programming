@@ -22,9 +22,8 @@ class ArrayWithElementsNotEqualToAverageOfNeighbors {
      return num;
     }
     public static void main(String[] args){
-    ArrayWithElementsNotEqualToAverageOfNeighbors tester = new ArrayWithElementsNotEqualToAverageOfNeighbors();
     int[] arr = {9,4,7,6,5};
-     int[] arr2 = tester.rearrangeArray(arr);
+     int[] arr2 = ArrayWithElementsNotEqualToAverageOfNeighbors.rearrangeArray(arr);
    System.out.println(Arrays.toString(arr2));
     }
 }

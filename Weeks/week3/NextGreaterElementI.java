@@ -1,3 +1,7 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 public class NextGreaterElementI {
     
         public int[] nextGreaterElement(int[] nums1, int[] nums2) {
