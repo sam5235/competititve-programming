@@ -1,17 +1,12 @@
 public class PowerOfFour {
     public boolean isPowerOfFour(int n) {
-        int x = 0;
-        return  cheaker(n,x); 
-    }
-    
-     
-    public boolean cheaker(int n, int x){
-        if(n== Math.pow(4, x)){
+        if(n == 1){
             return true;
-        }else if(n < Math.pow(4, x)){
+        }
+        if(n ==0 || n%4 != 0 ){
             return false;
         }
-        x++;
-       return cheaker(n,x);
+        return isPowerOfFour(n/4);
     }
+    
 }
